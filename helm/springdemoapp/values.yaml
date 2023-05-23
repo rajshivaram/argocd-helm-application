@@ -2,6 +2,7 @@ replicaCount: 1
 
 image:
   name: rajshivaram7/springboot-demo-app
+  pullPolicy: IfNotPresent
   tag: "latest"
 
 service:

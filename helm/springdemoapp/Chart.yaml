@@ -1,8 +1,8 @@
 apiVersion: v1
-name: spring-demo-app
+name: springdemoapp
 description: A Helm chart that deploys sample springboot application with postgres leveraging compositions
 type: application
-version: 0.1.0
+version: 1
 appVersion: "1.0.0"
 maintainers:
 - email: raj.shivaram@philips.com
