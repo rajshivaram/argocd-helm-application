@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: springdemoapp
   labels:
-    app: {{ .Chart.Name }}
+    app: springdemoapp
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: springdemoapp
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: springdemoapp
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+      - name: springdemoapp
+        image: rajshivaram7/springboot-demo-app:latest
         envFrom:
           - secretRef:
-              name: {{ .Values.postgres.secretName }}
+              name: test-postgres-connection
         startupProbe:
           httpGet:
             path: /health

@@ -5,15 +5,15 @@ metadata:
   namespace: default
 spec:
   parameters:
-    engine: {{ .Values.postgres.engine }}
+    engine: postgres
     engineVersion: "14.5"
-    storageGB: {{ .Values.postgres.storageGB }}
+    storageGB: 10
     passwordSecretRef:
       namespace: default
       name: psqlsecret
       key: password
   writeConnectionSecretToRef:
-    name: {{ .Values.postgres.secretName }}
+    name: test-postgres-connection
 
 ---
 

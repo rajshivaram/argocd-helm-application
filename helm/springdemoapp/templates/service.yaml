@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-service
+  name: springdemoapp
 spec:
   selector:
-    app: {{ .Chart.Name }}
+    app: springdemoapp
   ports:
     - protocol: TCP
-      port: {{ .Values.service.port }}
+      port: 8082
       targetPort: 8080
